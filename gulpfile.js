@@ -23,6 +23,7 @@ gulp.task('style',function(){
 });
 
 gulp.task('watch',function(){
+  notify: false,
   browserSync.init({
     server:{
       baseDir: "app"
