@@ -30,10 +30,16 @@ gulp.task('watch',function(){
   });
 
   watch('./app/index.html',function(){
-    gulp.start('html');
+    browserSync.reload();
   });
 
   watch('./app/assets/style/**/*.css',function(){
-    gulp.start('style');
+    // gulp.start('style');
+    gulp.start('cssInject');
   });
+});
+
+gulp.task('cssInject',['style'],function(){
+  return gulp.src('./app/temp/style/style.css')
+  .pipe(browserSync.stream());
 });
