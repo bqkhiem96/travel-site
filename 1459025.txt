@@ -1,0 +1,141 @@
+Homework 1
+
+Deadline:
+(1) paper: 08h00, 23 Sep 2016, room 11B
+(2) MS word file: 23h00, 23 Sep 2016, Moodle system
+
+Manual pages are divided into 9 sections. List commands belonging to each section,  (10 commands for each) and describe the meaning, how to use, and parameters of every command.
+
+
+
+Section 1
+User Commands:
+1.	Tar
+-	Syntax: tar [OPTION...] [FILE]...
+-	Description:
+o	GNU 'tar' saves many files together into a single tape or disk archive, and can restore individual files from the archive.
+-	5 examples:
+o	tar –cf archive.tar foo bar: create archive.tar from files foo and bar
+o	tar -tvf archive.tar: list all files archive.tar verbosely
+o	tar -xf archive.tar: extarct all files from archive.tar
+o	tar  -A, --catenate, --concatenate: append tar files to an archive
+o	tar -c, --create: create a new archive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.	Grep
+-	Syntax:
+o	grep [OPTIONS] PATTERN [FILE...]
+o	grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
+-	Description:
+o	Searches the named input FILEs (or standard input if no files are named, or if a single hyphen-minus (-) is given as file name) for lines containing a match to the given PATTERN5. By default, grep prints the matching lines.
+-	Examples:
+o	grep –i “the” demo file: search for “the” in demo file
+o	grep –A 3 –i “example” demo_text: print 3 lines that contain “example” in the demo_text
+o	grep –r  “quockhiem”: search for “quockhiem” in all files recursively
+o	grep --invert-match “quockhiem” demo-text: invert the sense of matching, in order to select non-matching lines
+
+
+
+
+3.	ssh
+-	Syntax:
+o	ssh  [-b bind_address] [-c cipher_spec]
+-	Description:
+
+o	Login into a remote machine and executing command lines on that machines
+
+-	Examples:
+o	ssh –l quockhiem remotehost.example.com: login into remote host
+o	ssh –v –l quockhiem remotehost.example: debugging ssh client version
+o	ssh –v: displaying client version
+
+o	ssh – o: get options of the format used in the config files
+
+o	ssh –W: Requests that standard input and output on the client be forwarded to host on port over the secure channel.
+
+
+
+
+
+4.	vim
+-	Syntax:
+o	 vim [options] [file ..]
+-	Description:
+
+o	Login into a remote machine and executing command lines on that machines
+
+-	Examples:
+o	Vim quockhiem.txt: start a quockhiem text file to generate a sequence of text
+o	Vim +[num] quockhiem.txt : For the first file the cursor will be positioned on line "num". If "num" is missing, the cursor will be positioned on the last line.
+o	Vim +quockhiem quockhiem.txt: go to the first match of the specified.
+o	Vim –R /etc/passwd: open the file in read only-mode
+o	Vim -o[3]:Open 3 windows stacked. When 3 is omitted, open one window for each file.
+5.	Diff
+-	Syntax:
+diff [OPTION]... FILES
+-	Description:
+o	Compare file in lines
+-	Examples:
+o	Diff –w buiquockhiem.txt quockhiem.txt: ignore white space while comparing
+o	Diff -i --ignore-case: Ignore case differences in file contents.
+o	Diff -E --ignore-tab-expansion: Ignore changes due to tab expansion.
+o	Diff -b --ignore-space-change: Ignore changes in the amount of white space.
+o	Diff -w --ignore-all-space:Ignore all white space.
+6.	Sort:
+-	Syntax:
+o	 sort [OPTION]... [FILE]...
+-	Description:
+o	Sort lines of text files
+-	Examples:
+o	sort -d, --dictionary-order:consider only blanks and alphanumeric characters
+o	sort -f, --ignore-case:fold lower case to upper case characters
+o	sort -g, --general-numeric-sort: compare according to general numerical value
+o sort -n: comparing according to string numerical value
+o sort -R: sort by random harsh of keys
+7.  Bash :
+- Syntax: bash [options] [file]
+- description: is an sh-compatible command language interpreter that executes commands read from the standard input or from a file.
+- Example:
+o bash -c quockhiem: read from string "quockhiem". if there are arguments after the string, , they are assigned to the positional parameters, starting with $0.
+o bash -i: the shell is interactive
+o bash -l: make bash as if it had been invoked as a login shell
+o bash -r: the shell becomes restricted
+o bash -s: commands are read from the standard input. This option allows the positional parameters to be set when invoking an interactive shell.
+8. ls
+- Syntax: ls [OPTION]... [FILE]...
+- Description: list directory contents
+- Examples:
+o ls -a: list all files
+o ls --author: print the author of each file
+o ls --escape: print octal escapes for nongraphic characters
+o ls -B: do not list implied entries ending with ~
+o ls -f: do not sort, enable -aU, disable -ls --color
+
+9. abcde
+- syntax: abcde [options][tracks]
+- description: Grab an entire CD and compress it to Ogg/Vorbis, MP3, FLAC, Ogg/Speex and/or MPP/MP+(Musepack) format.
+- Examples:
+o abcde -1: Encode the whole CD in a single file. The resulting file uses the CD title for tagging. If the resulting format is a flac file with an embedded cuesheet, the file can be used as a source for creating other formats. Use "-1 -o flac -a default,cue" for obtaining such a file.
+o abcde -a: Comma-delimited list of actions to perform. Can be one or more of: cddb, cue, read, normalize, encode, tag, move, replaygain, playlist, clean.
+o abcde -b: Enable batch mode normalization. See the BATCHNORM configuration variable.
+o abcde -c:  Specifies an additional configuration file to parse. Configuration options in this file override those in /etc/abcde.conf or $HOME/.abcde.conf.
+o abcde -d: CD-ROM block device that contains audio tracks to be read. Alternatively, a single-track flac file with embedded cuesheet.
+10. pwd:
+- Syntax: pwd [options][files]
+- Description: print name of current/working directory
+- Examples:
+o pwd -L: use PWD from environment, even if it contains symlinks
+o pwd -P: avoid all symlinks
+o pwd --version: output version information and exit
